@@ -1,3 +1,2 @@
 vk-api==11.8.0
 datetime
-json
