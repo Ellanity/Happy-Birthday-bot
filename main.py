@@ -25,7 +25,7 @@ def Get_blocked_users_list():  #Получения списка пользова
     #в список Blacklist_from_file_list_format
     Id_for_block = 0;
     for Symbol in Blacklist_from_file_string_format:  #Посимвольно проходимся по строке с заблокированными id
-        if(Symbol != ',' and Symbol != ' ' and Symbol != '.'):  #В случае, если символ является цифрой
+        if(Symbol >= '0' and Symbol <= '9'):  #В случае, если символ является цифрой
             Id_for_block *= 10  #Имеющееся на данный момент значение в переменой мы домнажаем на 10
             Id_for_block += int(Symbol)  #А затем добавляем преобразованный в integer символ из строки
             #Тем самым пошагово воссоздавая id из string в integer
@@ -104,7 +104,7 @@ def Random_congratulation():  #Функция для получения случ
 
 
 while True:  #Начинаем бесконечный цикл для постоянной проверки даты и времени
-    if (str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "10:00:00"):  #Раз в день начинаем проверку всех пользователей во френдлисте
+    if (str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "13:36:00"):  #Раз в день начинаем проверку всех пользователей во френдлисте
         time.sleep(0.5);  #Ожидаем, чтобы исключить возможность выпонения программы несколько раз
         Friends_to_congratulate = Get_Friend_list()  #Получаем список друзей пользователся на данный момент и записываем их в новый список
         #print(Friends_to_congratulate)  #Убедиться, что все работает верно
