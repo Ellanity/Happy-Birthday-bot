@@ -104,9 +104,9 @@ def Random_congratulation():  #Функция для получения случ
 
 
 while True:  #Начинаем бесконечный цикл для постоянной проверки даты и времени
-    if (str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "14:15:00"
-            or str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "14:15:01"
-            or str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "14:15:02"):
+    if (str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "06:00:00"
+            or str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "06:00:01"
+            or str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "06:00:02"):
                 #Раз в день начинаем проверку всех пользователей во френдлисте
         time.sleep(5);  #Ожидаем, чтобы исключить возможность выпонения программы несколько раз
         Friends_to_congratulate = Get_Friend_list()  #Получаем список друзей пользователся на данный момент и записываем их в новый список
@@ -115,7 +115,7 @@ while True:  #Начинаем бесконечный цикл для посто
             dBirth = Get_Birth_date(User)  #Получаем дату рождения определенного пользователя из списка
             Result_of_comparison = The_comparison_of_dates(dBirth)  #Полученный результат после сравнения дат рождения и текущей(+/-)
             if (Result_of_comparison == True):  #Если даты совпали, то сегодня у пользователя день рождения
-                print(1, User, dBirth)
-                Message_text = Random_congratulation()
-                vk_session.method('messages.send', {'user_id': User, 'message': Message_text, 'random_id': 0})
-        time.sleep(82800)
+                print("Birthday!:", User, dBirth)
+                Message_text = Random_congratulation()  #Берем случайнуб фразу из списка при помощи написанной ранее функции
+                vk_session.method('messages.send', {'user_id': User, 'message': Message_text, 'random_id': 0})  #Отсылаем сообщение с выбранным текстом
+        time.sleep(82800)  #Просто спим следующие 23 часа 
