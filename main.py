@@ -104,9 +104,11 @@ def Random_congratulation():  #Функция для получения случ
 
 
 while True:  #Начинаем бесконечный цикл для постоянной проверки даты и времени
-    if (str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "14:20:00" or str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "14:20:01"):  
-    #Раз в день начинаем проверку всех пользователей во френдлисте
-        time.sleep(0.5);  #Ожидаем, чтобы исключить возможность выпонения программы несколько раз
+    if (str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "17:10:00"
+            or str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "17:10:01"
+            or str(datetime.strftime(datetime.now(), "%H:%M:%S")) == "17:10:02"):
+                #Раз в день начинаем проверку всех пользователей во френдлисте
+        time.sleep(5);  #Ожидаем, чтобы исключить возможность выпонения программы несколько раз
         Friends_to_congratulate = Get_Friend_list()  #Получаем список друзей пользователся на данный момент и записываем их в новый список
         #print(Friends_to_congratulate)  #Убедиться, что все работает верно
         for User in Friends_to_congratulate:  #Проходимся по списку тех, кого надо поздравить
